@@ -1,39 +1,14 @@
-import { useQuery, gql } from '@apollo/client';
+import Link from 'next/link'
 import styles from './styles.module.css';
 
-const GET_COUNTRY = gql`
-  query GetCountry($code: ID!) {
-    country(code: $code) {
-      name
-      emoji
-      languages {
-        code
-        name
-      }
-    }
-  }
-`;
-
 export default function HomeTemplate() {
-  const { loading, error, data } = useQuery(GET_COUNTRY, {
-    variables: { code: 'FR' },
-  });
-
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error</div>;
-
   return (
     <div className={styles.container}>
-      {`${data.country.name} ${data.country.emoji}`}
+      <h1>Home</h1>
 
-      <div>Languages</div>
-      <ul>
-        {data.country.languages.map(({ code, name }: { code: string; name: string }) => (
-          <li key={code}>
-            {`${name} (${code})`}
-          </li>
-        ))}
-      </ul>
+      <Link href="/countries">
+        <a>Countries</a>
+      </Link>
     </div>
   );
 }
