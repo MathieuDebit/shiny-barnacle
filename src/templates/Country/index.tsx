@@ -21,7 +21,7 @@ const GET_COUNTRY = gql`
   }
 `;
 
-export default function CountryTemplate({code} : { code: string}) {
+export default function CountryTemplate({ code } : { code: string}) {
   const { loading, error, data } = useQuery(GET_COUNTRY, {
     variables: { code },
   });
@@ -35,11 +35,26 @@ export default function CountryTemplate({code} : { code: string}) {
     <div className={styles.container}>
       <h1>{`${country.emoji} ${country.name}`}</h1>
 
-      <p>Native: {country.native}</p>
-      <p>Continent: {country.continent.name}</p>
-      <p>Capital: {country.capital}</p>
-      <p>Phone: {country.phone}</p>
-      <p>Currency: {country.currency}</p>
+      <p>
+        Native:
+        {country.native}
+      </p>
+      <p>
+        Continent:
+        {country.continent.name}
+      </p>
+      <p>
+        Capital:
+        {country.capital}
+      </p>
+      <p>
+        Phone:
+        {country.phone}
+      </p>
+      <p>
+        Currency:
+        {country.currency}
+      </p>
 
       <div>Languages</div>
       <ul>

@@ -1,6 +1,6 @@
 import CountryTemplate from 'src/templates/Country';
-import {useQuery, gql} from "@apollo/client";
-import {useRouter} from "next/router";
+import { useQuery, gql } from '@apollo/client';
+import { useRouter } from 'next/router';
 
 const LIST_COUNTRIES = gql`
   {
@@ -12,16 +12,16 @@ const LIST_COUNTRIES = gql`
 `;
 
 export default function Country() {
-  const router = useRouter()
+  const router = useRouter();
   const query = router.query.id as string;
 
-  const {data, loading, error} = useQuery(LIST_COUNTRIES);
+  const { data, loading, error } = useQuery(LIST_COUNTRIES);
 
   if (loading || error) {
     return <p>{error ? error.message : 'Loading...'}</p>;
   }
 
-  const country = query && data.countries.find(el => el.name === query.replace(/^\w/, c => c.toUpperCase()));
+  const country = query && data.countries.find((el) => el.name === query.replace(/^\w/, (c) => c.toUpperCase()));
 
   if (!country) return <div>country not found</div>;
 

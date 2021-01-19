@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from 'next/link';
 import { useQuery, gql } from '@apollo/client';
 import styles from './styles.module.css';
 
