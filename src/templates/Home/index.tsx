@@ -4,10 +4,10 @@ import styles from './styles.module.css';
 export default function HomeTemplate() {
   return (
     <div className={styles.container}>
-      <h1>Home</h1>
+      <h1>🌎 The World 🌍</h1>
 
       <Link href="/countries">
-        <a>Countries</a>
+        <a>List of all countries</a>
       </Link>
     </div>
   );

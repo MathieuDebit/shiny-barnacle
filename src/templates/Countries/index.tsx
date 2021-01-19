@@ -25,11 +25,11 @@ export default function CountriesTemplate() {
 
       <ul>
         {data.countries.map(({ code, name, emoji }: { code: string; name: string, emoji: string }) => (
-          <li key={code}>
-            <Link href={`/countries/${name}`}>
+          <Link href={`/countries/${name}`}>
+            <li key={code}>
               <a>{`${emoji} ${name} (${code})`}</a>
-            </Link>
-          </li>
+            </li>
+          </Link>
         ))}
       </ul>
     </div>

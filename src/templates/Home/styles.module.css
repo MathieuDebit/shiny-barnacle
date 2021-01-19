@@ -1,2 +1,14 @@
 .container {
+  text-align: center;
+  margin-top: 7em;
+}
+
+.container h1 {
+  font-size: 4em;
+  margin-bottom: 5rem;
+}
+
+.container a {
+  font-size: 2em;
+  color: #14274e;
 }

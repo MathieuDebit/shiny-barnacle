@@ -1,2 +1,27 @@
 .container {
 }
+
+.container h1 {
+    font-size: 3em;
+    text-align: center;
+}
+
+.container ul {
+    margin: 0;
+    padding: 0;
+}
+
+.container li {
+    list-style-type: none;
+    margin-bottom: 10px;
+    padding: 20px;
+    background-color: #9ba4b4;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0px 0px;
+    transition: 300ms;
+}
+
+.container li:hover {
+    box-shadow: 3px 5px;
+}

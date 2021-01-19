@@ -10,6 +10,13 @@ const GET_COUNTRY = gql`
         code
         name
       }
+      native
+      phone
+      continent {
+        name
+      }
+      capital
+      currency
     }
   }
 `;
@@ -23,9 +30,16 @@ export default function CountryTemplate({code} : { code: string}) {
     return <p>{error ? error.message : 'Loading...'}</p>;
   }
 
+  const { country } = data;
   return (
     <div className={styles.container}>
-      <h1>{`${data.country.emoji} ${data.country.name}`}</h1>
+      <h1>{`${country.emoji} ${country.name}`}</h1>
+
+      <p>Native: {country.native}</p>
+      <p>Continent: {country.continent.name}</p>
+      <p>Capital: {country.capital}</p>
+      <p>Phone: {country.phone}</p>
+      <p>Currency: {country.currency}</p>
 
       <div>Languages</div>
       <ul>
